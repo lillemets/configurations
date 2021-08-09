@@ -1,0 +1,20 @@
+Only center monitor,sh scrs/monitorswitch.sh center
+Left side monitors,sh scrs/monitorswitch.sh left
+Monitors on the right,sh scrs/monitorswitch.sh right
+All three monitors,sh scrs/monitorswitch.sh all
+Blank displays,sleep 1 && xset dpms force off
+Lock and blank,sh ~/scrs/lock.sh; sleep 10 && xset dpms force off
+Screenshot in 3 seconds,"scrot -d 3 -q 100 ~/pics/scrot/%y%m%d_%H%M%S.jpg && notify-send -u normal 'Screenshot' 'Taken with 3 second delay'"
+Screenshot of selected area,"scrot -s ~/desk/%y%m%d%H%M%S.png && notify-send -u normal 'Screenshot' 'of selected area taken'"
+Screenshot of window,"sh ~/scrs/roundshadowwindow.sh && notify-send -u normal 'Screenshot' 'of window taken'"
+Horizontal scrolling toggle,sh ~/scrs/toggle_scrolling.sh
+File paths database update,"updatedb -l 0 -U /home/jrl --prunepaths '/home/jrl/.cache /home/jrl/.local' -o /home/jrl/.mlocate && notify-send -u normal 'File paths database' 'Updated'"
+Start Redshift,"redshift -t 5000:3500 -b 1:0.8 -l 58:26 && notify-send -u normal 'Redshift' 'Started'"
+Stop Redshift,"killall redshift && notify-send -u normal 'Redshift' 'Stopped'"
+Quit Gromit,"gromit-mpx --quit && notify-send -u normal 'Gromit' 'Turned off'"
+Wacom on DP-1,"xsetwacom set 'Wacom One by Wacom M Pen stylus' MapToOutput DP-1"
+Build course notes,Rscript work/resmeth/build.R
+ExifTool,nemo /mnt/raw & nemo ~/scrs/exiftool
+Time,libreoffice --quickstart --nologo docs/aeg_21b.xlsx
+Poweroff,poweroff
+Reboot,reboot

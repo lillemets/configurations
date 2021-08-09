@@ -1,0 +1,163 @@
+[colors]
+text = #111111
+top = #ffffff
+bottom = #aaa6a1
+light = #777777
+dark = #444444
+red = ${xrdb:color1}
+
+[bar/main]
+monitor = eDP1
+bottom = false
+width = 100%
+height = 22
+
+border-bottom-size = 1
+border-bottom-color = ${colors.light}
+
+foreground = ${colors.text}
+background-0 = ${colors.top}
+background-1 = ${colors.bottom}
+
+padding= 2
+
+font-0 = RobotoCondensed:size=12;3
+font-1 = FontAwesome5Free:style=Solid:size=12;3
+
+modules-left = menu i3 xwindow 
+modules-center = date time weather 
+modules-right = cpu temperature memory filesystem network battery0 battery1 pulseaudio
+
+enable-ipc = true
+
+; override-redirect = true
+; wm-restack = i3
+
+; tray-position = right
+; tray-transparent = true
+
+[module/i3]
+type = internal/i3
+index-sort = true
+
+ws-icon-0 = 1
+ws-icon-1 = 2
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
+ws-icon-5 = 6
+ws-icon-6 = 7
+ws-icon-7 = 8
+ws-icon-8 = 9
+
+label-focused = %name%
+label-focused-foreground = ${colors.text}
+label-focused-padding = 1
+
+label-unfocused = %name%
+label-unfocused-foreground = ${colors.light}
+label-unfocused-padding = 1
+
+label-visible = %name%
+label-visible-foreground = ${colors.dark}
+label-visible-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label-maxlen = 60
+label-padding = 5
+
+[module/menu]
+type = custom/text
+content = 
+click-left = rofi -show drun
+click-middle = rofi -show window
+click-right = sh ~/.config/rofi/menu.sh
+content-padding = 3
+
+[module/date]
+type = internal/date
+interval = 600
+date = %B %e, %A
+label = %date%
+label-padding = 2
+
+[module/time]
+type = internal/date
+interval = 10
+time = %H:%M
+label = %time%
+label-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+label = %percentage:2%%
+label-padding = 2
+
+[module/temperature]
+type = internal/temperature
+interval = 2
+thermal-zone = 1
+label-warn-foreground = ${colors.red}
+warn-temperature = 50
+label-padding = 2
+label-warn-padding = 2
+
+[module/memory]
+type = internal/memory
+interval = 10
+#label = %percentage_used%%
+label = %gb_used%
+label-padding = 2
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+interval = 600
+#label-mounted = %percentage_used%%
+label-mounted = %used%
+label-mounted-padding = 2
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+interval = 3
+downspeed-minwidth = 10
+label-connected = %downspeed%
+label-connected-padding = 2
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+label-volume = %percentage:2%%
+label-muted = 0%
+label-muted-foreground = ${colors.red}
+label-volume-padding = 2
+
+[module/battery0]
+type = internal/battery
+battery = BAT0
+poll-interval = 60
+label-discharging-padding = 2
+label-charging-padding = 2
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+poll-interval = 60
+label-discharging-padding = 2
+label-charging-padding = 2
+
+[module/weather]
+type = custom/script
+interval = 600
+format = <label>
+exec =  ~/.config/polybar/weather
+format-padding = 2
+
+; vim:ft=dosini

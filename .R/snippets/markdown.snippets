@@ -1,0 +1,49 @@
+snippet int
+	---
+	title: ${1}
+	subtitle: ${2}
+	author: Jüri Lillemets
+	date: `r quote("\u0022\u0060r format(Sys.time(), '%Y-%m-%d')\u0060\u0022")`
+	output: 
+	  html_document:
+	    theme: yeti
+	editor_options:
+	  chunk_output_type: console
+	---
+	  
+	```{r setup, include = F} # Add "set": knitr::opts_chunk$set
+	# Settings
+	knitr::opts_chunk$set(include = T, eval = T, echo = F, message = F, warning = F, error = F)
+	# Set working directory
+	setwd('/home/jrl/${3}')
+	# Load packages
+	${4}
+	```
+
+	${0}
+	
+snippet `
+	``` {r}
+	${0}
+	```
+
+snippet [
+	[${1:label}](${2:location})
+
+snippet ![
+	![${1:label}](${2:location})
+
+snippet r
+	```{r ${1:label}, ${2:options}}
+	${0}
+	```
+
+snippet rcpp
+	```{r, engine='Rcpp'}
+	#include <Rcpp.h>
+	using namespace Rcpp;
+	
+	${0}
+	
+	```
+

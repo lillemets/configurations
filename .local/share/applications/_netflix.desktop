@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Netflix
+GenericName=Movies and series
+Icon=netflix
+Exec=google-chrome-stable --app=https://www.netflix.com
+Categories=Video
+Terminal=false

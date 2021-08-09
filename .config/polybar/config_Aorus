@@ -1,0 +1,152 @@
+[colors]
+text = #111111
+top = #ffffff
+bottom = #999999
+light = #777777
+dark = #444444
+red = ${xrdb:color1}
+
+[bar/main]
+monitor = DP-1
+bottom = false
+width = 100%
+height = 22
+
+border-bottom-size = 1
+border-bottom-color = ${colors.light}
+
+foreground = ${colors.text}
+background-0 = ${colors.top}
+background-1 = ${colors.bottom}
+
+padding= 2
+
+font-0 = RobotoCondensed:size=12;3
+font-1 = FontAwesome5Free:style=Solid:size=12;3
+
+modules-left = menu i3 xwindow 
+modules-center = date time weather
+modules-right = news cpu temperature memory filesystem network
+
+enable-ipc = true
+
+; override-redirect = true
+; wm-restack = i3
+
+; tray-position = right
+; tray-transparent = true
+
+[module/i3]
+type = internal/i3
+index-sort = true
+
+ws-icon-0 = 1
+ws-icon-1 = 2
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
+ws-icon-5 = 6
+ws-icon-6 = 7
+ws-icon-7 = 8
+ws-icon-8 = 9
+
+label-focused = %name%
+label-focused-foreground = ${colors.text}
+label-focused-padding = 1
+
+label-unfocused = %name%
+label-unfocused-foreground = ${colors.light}
+label-unfocused-padding = 1
+
+label-visible = %name%
+label-visible-foreground = ${colors.dark}
+label-visible-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 1
+
+[module/menu]
+type = custom/text
+content = 
+click-left = rofi -show drun
+click-middle = rofi -show window
+click-right = sh ~/.config/rofi/menu.sh
+content-padding = 3
+
+[module/xwindow]
+type = internal/xwindow
+label-maxlen = 140
+label-padding = 8
+
+[module/date]
+type = internal/date
+interval = 600
+date = %B %e, %A
+label = %date%
+label-padding = 4
+
+[module/time]
+type = internal/date
+interval = 10
+time = %H:%M
+label = %time%
+label-padding = 4
+
+[module/weather]
+; requires jq
+type = custom/script
+interval = 600
+format = <label>
+exec =  ~/.config/polybar/weather
+format-padding = 4
+
+[module/news]
+; requires python-feedparser
+type = custom/script
+interval = 10
+exec = ~/.config/polybar/news/news.sh
+click-left = ~/.config/polybar/news/news.sh url
+label-maxlen = 100
+label-padding = 8
+
+[module/cpu]
+type = internal/cpu
+interval = 3
+label-padding = 2
+label-warn-foreground = ${colors.red}
+warn-temperature = 10
+#label = %percentage-cores%
+
+[module/temperature]
+type = internal/temperature
+interval = 3
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
+label-warn-foreground = ${colors.red}
+warn-temperature = 50
+label-padding = 2
+
+[module/memory]
+type = internal/memory
+interval = 10
+#label = %percentage_used%%
+label = %gb_used%
+label-padding = 2
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+interval = 600
+#label-mounted = %percentage_used%%
+label-mounted = %used%
+label-mounted-padding = 2
+
+[module/network]
+type = internal/network
+interface = enp8s0
+interval = 3
+downspeed-minwidth = 10
+label-connected = %downspeed%
+label-connected-padding = 2
+
+; vim:ft=dosini

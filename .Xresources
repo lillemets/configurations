@@ -1,0 +1,39 @@
+Xcursor.theme: cursor-theme
+Xcursor.size: 16
+
+! special
+*.foreground:   #ffffff
+*.background:   #111111
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #222222
+*.color8:       #555555
+
+! red
+*.color1:       #e6457a
+*.color9:       #e68aa8
+
+! green
+*.color2:       #b0e645
+*.color10:      #c7e68a
+
+! yellow
+*.color3:       #e69545
+*.color11:      #e6b88a
+
+! blue
+*.color4:       #45cbe6
+*.color12:      #8ad6e6
+
+! magenta
+*.color5:       #7a45e6
+*.color13:      #a88ae6
+
+! cyan
+*.color6:       #45e6b0
+*.color14:      #8ae6c7
+
+! white
+*.color7:       #cccccc
+*.color15:      #eeeeee

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Jupiter
+GenericName=Content by ERR
+Icon=tv
+Exec=google-chrome-stable --app=https://jupiter.err.ee/video
+Categories=Video
+Terminal=false

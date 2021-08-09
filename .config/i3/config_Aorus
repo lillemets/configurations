@@ -1,0 +1,152 @@
+# General
+set $mod Mod4
+floating_modifier $mod
+font pango:RobotoCondensed 12
+new_window pixel 0
+new_float pixel 0
+workspace_layout default
+focus_follows_mouse no
+popup_during_fullscreen smart
+workspace_auto_back_and_forth yes
+focus_on_window_activation smart
+floating_maximum_size 1280 x 1366
+title_align center
+
+# Colors
+client.focused          #00000066 #00000066 #00a86b
+client.focused_inactive #00000066 #00000066 #a6e22e
+client.unfocused        #00000066 #00000066 #ffffff
+
+# Gaps and borders
+smart_borders on
+smart_gaps on
+gaps inner 14
+gaps outer 0
+
+# Resize
+bindsym $mod+Shift+Control+n resize shrink height 200 px
+bindsym $mod+Shift+Control+e resize grow height 200 px
+bindsym $mod+Shift+Control+i resize shrink width 200 px
+bindsym $mod+Shift+Control+o resize grow width 200 px
+
+# System
+bindsym $mod+q reload
+bindsym $mod+Shift+q restart
+bindsym $mod+Shift+w exec "i3-nagbar -t warning -m 'Log out?' -b 'Yes' 'i3-msg exit'"
+
+# Layout
+bindsym $mod+w kill
+bindsym $mod+f layout toggle
+bindsym $mod+p exec --no-startup-id polybar-msg cmd toggle # Toggle polybar
+
+# Toggle gaps
+bindsym $Mod+g gaps inner current set 0; gaps outer current toggle 0
+bindsym $Mod+Shift+g gaps inner current set 12; gaps outer current set 0
+
+# Splits
+bindsym $mod+z split v
+bindsym $mod+x split h
+
+# Float and fullscreen
+bindsym $mod+c floating toggle; move position center
+bindsym $mod+h focus mode_toggle
+bindsym $mod+v fullscreen toggle
+bindsym $mod+b sticky toggle
+bindsym $mod+j move position center
+
+## Float to specific size
+bindsym $mod+l floating enable; resize set 1280 1366; move position center
+bindsym $mod+u floating enable; resize set 800 1366; move position center
+bindsym $mod+y floating enable; resize set 854 854; move position center
+bindsym $mod+semicolon floating enable; resize set 854 480; move position center
+bindsym $mod+apostrophe floating enable; resize set 600 338; move position center
+
+# Change focus
+bindsym $mod+n focus down
+bindsym $mod+e focus up
+bindsym $mod+i focus left
+bindsym $mod+o focus right
+
+# Move focused window
+bindsym $mod+Shift+i move left 100
+bindsym $mod+Shift+n move down 100
+bindsym $mod+Shift+e move up 100
+bindsym $mod+Shift+o move right 100
+
+# Applications bindings
+bindsym $mod+d exec --no-startup-id alacritty
+bindsym $mod+t exec --no-startup-id rofi -show drun
+bindsym $mod+s exec --no-startup-id locate -d /home/jrl/.mlocate /home/jrl | sed 's%/home/jrl/%%g' | rofi -dmenu -i | xargs -r -0 xdg-open
+bindsym $mod+r exec --no-startup-id rofi -show window
+bindsym $mod+a exec --no-startup-id sh ~/.config/rofi/menu.sh
+## Gromit-MPX
+#bindsym $mod+minus exec --no-startup-id gromit-mpx --toggle
+#bindsym $mod+equal exec --no-startup-id gromit-mpx --visibility
+#bindsym $mod+BackSpace exec --no-startup-id gromit-mpx --clear
+#bindsym $mod+Escape exec --no-startup-id gromit-mpx --undo
+#bindsym $mod+Shift+Escape exec --no-startup-id gromit-mpx --redo
+
+## Keypad
+#bindsym KP_Divide exec --no-startup-id 
+#bindsym KP_Multiply exec --no-startup-id 
+#bindsym KP_Subtract exec --no-startup-id 
+#bindsym KP_Home exec --no-startup-id 
+#bindsym KP_Up exec --no-startup-id 
+#bindsym KP_Prior exec --no-startup-id 
+#bindsym KP_Add exec --no-startup-id 
+#bindsym KP_Left exec --no-startup-id 
+#bindsym KP_Begin exec --no-startup-id
+#bindsym KP_Right exec --no-startup-id 
+#bindsym KP_End exec --no-startup-id 
+#bindsym KP_Down exec --no-startup-id 
+#bindsym KP_Next exec --no-startup-id 
+#bindsym KP_Enter exec --no-startup-id 
+#bindsym KP_Insert exec --no-startup-id 
+#bindsym KP_Delete exec --no-startup-id 
+
+# Set workspaces
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws0 0
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# Autostart
+exec --no-startup-id sh ~/.config/polybar/launch.sh
+exec --no-startup-id feh --no-fehbg --bg-fill ~/pics/wallpapers/lakebrienz.jpg
+exec --no-startup-id redshift -t 5000:3500 -b 1:0.8 -l 58:26
+exec --no-startup-id unclutter -idle 1 -root
+exec --no-startup-id picom
+exec --no-startup-id insync start
+exec --no-startup-id xbindkeys
+exec --no-startup-id dunst
+#exec --no-startup-id setxkbmap ee us # Use /etc/X11/xorg.conf.d/00-keyboard.conf instead

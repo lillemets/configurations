@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Outlook
+GenericName=Work mail
+Icon=office
+Exec=google-chrome-stable --app=https://outlook.office.com/mail/inbox
+Categories=Office
+Terminal=false

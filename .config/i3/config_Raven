@@ -1,0 +1,163 @@
+# General
+set $mod Mod4
+floating_modifier $mod
+font pango:RobotoCondensed 11
+new_window pixel 0
+new_float pixel 0
+workspace_layout default
+focus_follows_mouse no
+popup_during_fullscreen smart
+workspace_auto_back_and_forth yes
+focus_on_window_activation smart
+#floating_maximum_size 1280 x 1366
+title_align center
+
+# Colors
+client.focused          #00000066 #00000066 #00a86b
+client.focused_inactive #00000066 #00000066 #a6e22e
+client.unfocused        #00000066 #00000066 #ffffff
+
+# Gaps and borders
+smart_gaps on
+gaps inner 14
+gaps outer 0
+smart_borders on
+
+# Resize mode
+mode "resize" {
+  bindsym Down resize grow height 5 px or 2 ppt
+  bindsym Up resize shrink height 5 px or 2 ppt
+  bindsym Left resize shrink width 5 px or 2 ppt
+  bindsym Right resize grow width 5 px or 2 ppt
+
+  bindsym n resize grow height 25 px or 10 ppt
+  bindsym e resize shrink height 25 px or 10 ppt
+  bindsym i resize shrink width 25 px or 10 ppt
+  bindsym o resize grow width 25 px or 10 ppt
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+# System
+bindsym $mod+q reload
+bindsym $mod+Shift+q restart
+bindsym $mod+Shift+w exec "i3-nagbar -t warning -m 'Log out?' -b 'Yes' 'i3-msg exit'"
+
+# Layout
+bindsym $mod+w kill
+bindsym $mod+f layout toggle
+bindsym $mod+p exec --no-startup-id polybar-msg cmd toggle # Toggle polybar
+bindsym $mod+h mode "resize"
+
+# Toggle gaps
+bindsym $Mod+g gaps inner current set 0; gaps outer current toggle 0
+bindsym $Mod+Shift+g gaps inner current set 12; gaps outer current set 0
+
+# Splits
+bindsym $mod+z split v
+bindsym $mod+x split h
+
+# Float and fullscreen
+bindsym $mod+c floating toggle; move position center
+bindsym $mod+Shift+C focus mode_toggle
+bindsym $mod+v fullscreen toggle
+bindsym $mod+b sticky toggle
+bindsym $mod+j move position center
+## Float to specific size
+bindsym $mod+l floating enable; resize set 1280 1366; move position center
+bindsym $mod+u floating enable; resize set 600 1366; move position center
+bindsym $mod+y floating enable; resize set 1600 1200; move position center
+bindsym $mod+semicolon floating enable; resize set 854 480; move position center
+bindsym $mod+apostrophe floating enable; resize set 600 338; move position center
+
+# Change focus
+bindsym $mod+n focus down
+bindsym $mod+e focus up
+bindsym $mod+i focus left
+bindsym $mod+o focus right
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+# Move focused window
+bindsym $mod+Shift+i move left 75
+bindsym $mod+Shift+n move down 75
+bindsym $mod+Shift+e move up 75
+bindsym $mod+Shift+o move right 75
+
+# Applications bindings
+bindsym $mod+d exec --no-startup-id alacritty
+bindsym $mod+t exec --no-startup-id rofi -show drun
+bindsym $mod+s exec --no-startup-id locate -d /home/jrl/.mlocate /home/jrl | sed 's%/home/jrl/%%g' | rofi -dmenu -i | xargs -r -0 xdg-open
+bindsym $mod+r exec --no-startup-id rofi -show window
+bindsym $mod+a exec --no-startup-id sh ~/.config/rofi/menu.sh
+
+## Gromit-MPX
+bindsym $mod+minus exec --no-startup-id gromit-mpx --toggle
+bindsym $mod+equal exec --no-startup-id gromit-mpx --visibility
+bindsym $mod+BackSpace exec --no-startup-id gromit-mpx --clear
+bindsym $mod+Escape exec --no-startup-id gromit-mpx --undo
+bindsym $mod+Shift+Escape exec --no-startup-id gromit-mpx --redo
+
+# Set workspaces
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws0 0
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# Assign workspaces to monitors
+workspace $ws1 output HDMI-1
+workspace $ws2 output HDMI-1
+workspace $ws3 output HDMI-1
+workspace $ws4 output HDMI-1
+workspace $ws5 output HDMI-1
+workspace $ws6 output DP-1
+workspace $ws7 output DP-1
+workspace $ws8 output HDMI-2
+workspace $ws9 output HDMI-2
+workspace $ws0 output HDMI-2
+
+# Set attributes for specific windows
+for_window [instance="Toplevel"] floating enable # Zotero Google Docs integration
+
+# Autostart
+exec --no-startup-id xrandr --output HDMI-1 --rotate left --primary --output HDMI-2 --off --output DP-1 --off
+exec --no-startup-id feh --no-fehbg --bg-fill ~/pics/wallpapers/maidenhair_full.jpg
+exec --no-startup-id redshift -t 5500:4000 -b 1:0.8 -l 58:26
+exec --no-startup-id picom
+exec --no-startup-id sh ~/.config/polybar/launch.sh
+exec --no-startup-id unclutter -idle 1 -root
+exec --no-startup-id insync start
+exec --no-startup-id xbindkeys
+exec --no-startup-id dunst

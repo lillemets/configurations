@@ -1,0 +1,27 @@
+# Elecom Huge 
+
+## Home
+"xte 'keydown Home' 'keyup Home'"
+   b:10 + release
+## End
+"xte 'keydown End' 'keyup End'"
+   b:11 + release
+## Rofi drun
+#"xte 'keydown Super_L' 'key z' 'keyup Super_L'"
+#   b:10 + release
+## Rofi do 
+#"xte 'keydown Super_L' 'keydown Shift_L' 'key z' 'keyup Shift_L' 'keyup Super_L'"
+#   b:11 + release
+
+## Copy-paste
+#"xte 'keydown Control_L' 'key V' 'keyup Control_L'"
+#   b:10 + release
+#"xte 'keydown Control_L' 'key C' 'keyup Control_L'"
+#   b:11 + release
+
+## Zoom
+#"xte 'keydown Control_L' 'keydown Shift_L' 'key equal' 'keyup Shift_L' 'keyup Control_L'"
+#   b:6 + release
+#"xte 'keydown Control_L' 'key minus' 'keyup Control_L'"
+#   b:7 + release
+

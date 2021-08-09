@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu>
+	<menu id="root-menu" label="Menu">
+		<item label="Obmenu">
+			<action name="Execute">
+				<execute>obmenu</execute>
+			</action>
+		</item>
+		<item label="Obconf">
+			<action name="Execute">
+				<execute>obconf</execute>
+			</action>
+		</item>
+		<item label="Lxappear">
+			<action name="Execute">
+				<execute>lxappearance</execute>
+			</action>
+		</item>
+		<separator/>
+		<item label="Reboot">
+			<action name="Execute">
+				<execute>reboot</execute>
+			</action>
+		</item>
+		<item label="Poweroff">
+			<action name="Execute">
+				<execute>poweroff</execute>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>

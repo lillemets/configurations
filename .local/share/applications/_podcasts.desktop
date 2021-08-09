@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Podcasts
+GenericName=Google Podcasts
+Icon=podcasts
+Exec=google-chrome-stable --app=https://podcasts.google.com
+Categories=Audio
+Terminal=false

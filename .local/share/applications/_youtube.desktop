@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Youtube
+GenericName=All kinds of videos
+Icon=youtube
+Exec=google-chrome-stable --app=https://www.youtube.com
+Categories=Video
+Terminal=false
+

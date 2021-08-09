@@ -1,0 +1,10 @@
+{
+    "executeCode" : "Ctrl+R",
+    "executeCodeWithoutMovingCursor" : "",
+    "executeCurrentChunk" : "Ctrl+X",
+    "insertAssignmentOperator" : "Ctrl+T",
+    "insertChunkR" : "",
+    "insertPipeOperator" : "Ctrl+D",
+    "pasteLastYank" : "",
+    "switchFocusSourceConsole" : ""
+}

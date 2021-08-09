@@ -1,0 +1,14 @@
+compton &
+feh --no-fehbg --bg-fill ~/pics/wallpapers/maidenhair.jpg &
+# sh ~/.config/polybar/launch.sh &
+setxkbmap -layout ee &
+xbindkeys &
+unclutter -idle 1 -root &
+redshift -t 5000:3500 -b 1:0.8 -l 58:26 &
+dropbox &
+plank &
+
+# Touchpad
+xinput set-prop "Synaptics TM2927-001" "Synaptics Tap Action" 0 0 0 0 1 3 2 &
+xinput set-prop "Synaptics TM2927-001" "Synaptics Tap Time" 240 &
+xinput set-prop "Synaptics TM2927-001" "Synaptics Two-Finger Scrolling" 1 1 &

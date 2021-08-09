@@ -1,0 +1,18 @@
+bind-key    o       open
+bind-key    i       quit
+bind-key    n       next
+bind-key    e       prev
+bind-key    d       pagedown
+bind-key    u       pageup
+bind-key    ENTER   open-in-browser
+bind-key    RIGHT   open
+bind-key    LEFT    quit
+
+browser     chromium
+
+color listnormal          green     default
+color listnormal_unread   default   default
+color listfocus           default   green
+color listfocus_unread    black     green
+color info                black     green
+color article             default   default

@@ -1,0 +1,26 @@
+[Default Applications]
+inode/directory=org.gnome.Nautilus.desktop;
+application/zip=org.gnome.Nautilus.desktop;
+application/xhtml+xml=chromium.desktop;
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/webcal=google-chrome.desktop
+image/jpeg=org.gnome.gThumb.desktop;
+image/png=org.gnome.gThumb.desktop;
+image/tiff=org.gnome.gThumb.desktop;
+image/x-fuji-raf=org.gnome.gThumb.desktop;
+video/mp4=mpv.desktop;vlc.desktop;chromium.desktop;
+text/csv=libreoffice-calc.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=onlyoffice-desktopeditors.desktop;
+application/pdf=org.gnome.Evince.desktop
+text/css=gvim.desktop;
+text/x-r-source=gvim.desktop;
+text/markdown=typora.desktop;
+text/x-r-markdown=typora.desktop;gvim.desktop;
+application/pdf=org.gnome.Evince.desktop;
+x-scheme-handler/msteams=teams.desktop
