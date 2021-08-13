@@ -15,6 +15,6 @@ Quit Gromit,"gromit-mpx --quit && notify-send -u normal 'Gromit' 'Turned off'"
 Wacom on DP-1,"xsetwacom set 'Wacom One by Wacom M Pen stylus' MapToOutput DP-1"
 Build course notes,Rscript work/resmeth/build.R
 ExifTool,nemo /mnt/raw & nemo ~/scrs/exiftool
-Time,libreoffice --quickstart --nologo docs/aeg_21b.xlsx
+Time,libreoffice --quickstart --nologo docs/aeg_21b.xlsx; i3-msg floating enable
 Poweroff,poweroff
 Reboot,reboot

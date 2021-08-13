@@ -121,7 +121,7 @@ label-padding = 2
 type = custom/script
 interval = 600
 format = <label>
-exec =  ~/.config/polybar/weather
+exec =  ~/.config/polybar/weather.sh
 format-padding = 2
 
 [module/news]
@@ -181,5 +181,13 @@ label-connected = %downspeed%
 label-disconnected = No signal
 label-connected-padding = 2
 label-disconnected-padding = 2
+
+[module/polywins]
+type = custom/script
+exec = ~/.config/polybar/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
+label-padding = 1
+tail = true
 
 ; vim:ft=dosini

@@ -157,7 +157,7 @@ label-charging-padding = 2
 type = custom/script
 interval = 600
 format = <label>
-exec =  ~/.config/polybar/weather
+exec =  ~/.config/polybar/weather.sh
 format-padding = 2
 
 ; vim:ft=dosini

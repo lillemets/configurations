@@ -23,21 +23,11 @@ gaps inner 14
 gaps outer 0
 smart_borders on
 
-# Resize mode
-mode "resize" {
-  bindsym Down resize grow height 5 px or 2 ppt
-  bindsym Up resize shrink height 5 px or 2 ppt
-  bindsym Left resize shrink width 5 px or 2 ppt
-  bindsym Right resize grow width 5 px or 2 ppt
-
-  bindsym n resize grow height 25 px or 10 ppt
-  bindsym e resize shrink height 25 px or 10 ppt
-  bindsym i resize shrink width 25 px or 10 ppt
-  bindsym o resize grow width 25 px or 10 ppt
-
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
+# Resize
+bindsym $mod+Shift+Control+n resize shrink height 200 px
+bindsym $mod+Shift+Control+e resize grow height 200 px
+bindsym $mod+Shift+Control+i resize shrink width 200 px
+bindsym $mod+Shift+Control+o resize grow width 200 px
 
 # System
 bindsym $mod+q reload

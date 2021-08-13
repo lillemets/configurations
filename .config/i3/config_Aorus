@@ -143,7 +143,7 @@ bindsym $mod+Shift+0 move container to workspace $ws0
 # Autostart
 exec --no-startup-id sh ~/.config/polybar/launch.sh
 exec --no-startup-id feh --no-fehbg --bg-fill ~/pics/wallpapers/lakebrienz.jpg
-exec --no-startup-id redshift -t 5000:3500 -b 1:0.8 -l 58:26
+exec --no-startup-id redshift -t 5000:4000 -b 1:0.8 -l 58:26
 exec --no-startup-id unclutter -idle 1 -root
 exec --no-startup-id picom
 exec --no-startup-id insync start

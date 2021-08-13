@@ -1,3 +1,9 @@
+""" PLUGINS
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/goyo.vim'
+call plug#end()
+
 """  GENERAL
 
 " Sets how many lines of history VIM has to remember

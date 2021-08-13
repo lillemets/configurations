@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Calendar
+GenericName=Google Calendar
+Icon=calendar
+Exec=google-chrome-stable --app=https://calendar.google.com
+Categories=Office
+Terminal=false
