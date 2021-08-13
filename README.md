@@ -15,32 +15,32 @@ This repository contains configuration files that define how my Linux system loo
 
 Alacritty windows have just enough darkness and blur to be readable while remaining aesthetic. The monospace font is [Iosevka](https://github.com/be5invis/Iosevka) and color scheme is Monokai that nicely matches the wallpaper.
 
-![terminals](/home/jrl/conf/img/terminals.jpg)
+![terminals](terminals.jpg)
 
 ### Graphical apps
 
 The minimal flat look of GUI apps is produced by the Manjaro flavor of [Qogir](https://github.com/vinceliuice/Qogir-theme) GTK theme. The theme has also matching icons and cursors. Even Qt apps follow this theming due to `export QT_QPA_PLATFORMTHEME=gtk3` in the `.xinitrc`. 
 
-### ![gui](/home/jrl/conf/img/gui.jpg)
+### ![gui](img/gui.jpg)
 
 ### Distraction-free writing
 
 I use Markdown with [Typora](https://typora.io/) for all of my writing (unless forced to work with `.docx` files). By hiding Polybar with a simple key binding, I can quicly unclutter the desktop. Okay, that accidental Dunst prompt can be distracting but can be avoided by not listening to music while writing.
 
-![typora](/home/jrl/conf/img/typora.jpg)
+![typora](img/typora.jpg)
 
 ### Media in kiosk
 
 Because toolbars are unnecessary when streaming media via Netflix or YouTube, I run such websites in kiosk mode on Google Chrome. These can be launched just like any other app due to custom `.desktop` files in `.local/share/applications`.
 
-![media](/home/jrl/conf/img/media.jpg)
+![media](img/media.jpg)
 
 ### Launcher
 
 Apps are launched via Rofi that is displayed when clicking on the icon on left side of the bar or a key binding on keyboard. The background is chosen to match that of Alacritty.
 
-![launcher](/home/jrl/conf/img/launcher.jpg)
+![launcher](img/launcher.jpg)
 
 Nice thing about Rofi is that in can be configured to lauhch anyting. I also use it to quickly run custom scripts that can be defined in a simple `.csv` file.
 
-![menu](/home/jrl/conf/img/menu.jpg)
+![menu](img/menu.jpg)
