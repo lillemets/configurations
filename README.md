@@ -15,7 +15,7 @@ This repository contains configuration files that define how my Linux system loo
 
 Alacritty windows have just enough darkness and blur to be readable while remaining aesthetic. The monospace font is [Iosevka](https://github.com/be5invis/Iosevka) and color scheme is Monokai that nicely matches the wallpaper.
 
-![terminals](terminals.jpg)
+![terminals](/img/terminals.jpg)
 
 ### Graphical apps
 
